@@ -14,5 +14,3 @@ def another():
     greeting("Dave")
 
 another()
-
-#how does this work
