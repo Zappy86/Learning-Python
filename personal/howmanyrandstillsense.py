@@ -24,7 +24,7 @@ def Randtillsense(input):
 smallest = 99999999
 smallestlist = []
 
-for i in range(1000):
+for i in range(1000): #did this and at some points it got it in one try, coolio
     new = Randtillsense("Dominic")
     if new[1] < smallest:
         smallest = new[1]
