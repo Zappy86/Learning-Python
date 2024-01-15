@@ -67,9 +67,9 @@ if __name__ == "__main__":
 
         return comp_guess_num(args.minimum, args.limit, num)
     
-    result = parsing()
+    result = parsing() #this will end up returning a tuple, (number it was guessing, # of trials)
 
-    if result[0] not in (-666, -420, -69, -1, 0, 1, 42, 69, 100, 420, 666): #cheeky message for people who use common numbers
+    if result[0] not in (-666, -420, -69, -1, 0, 1, 42, 69, 100, 420, 666): #cheeky message for people who use common numbers, those ill-witted scallywags
         print(f"The number is {result[0]:,}!\nThat took {result[1]:,} trials!")
     else:
         print(f"The number is {result[0]:,}! (How original...)\nThat took {result[1]:,} Trials!")
