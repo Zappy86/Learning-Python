@@ -8,11 +8,9 @@ def choose_rand_num(min, limit):
     return num
 
 def comp_guess_num(min, limit, num):
-    sequence = []
     trials = 0
 
-    for i in range(min, limit + 1): #choosing the num is inclusive, so this has to be too
-        sequence.append(i) #makes a sequence out of every number in the given range
+    sequence = list(range(min, limit + 1)) #choosing the num is inclusive, so this has to be too, makes a list of every num in range
     
     shuffle(sequence) #shuffles up the sequence so its guesses are random
 
