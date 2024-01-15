@@ -37,17 +37,17 @@ if __name__ == "__main__":
         )
 
         parser.add_argument(
-            "-m", "--minimum", dest="minimum", required=True, type=int, metavar="minimum",
+            "-m", "--minimum", dest="minimum", required=True, type=int,
             help="The minimum integer the computer will be guessing"
         )
 
         parser.add_argument(
-            "-l", "--limit", dest="limit", required=True, type=int, metavar="limit",
+            "-l", "--limit", dest="limit", required=True, type=int,
             help="The maximum integer the computer will be guessing"
         )
 
         parser.add_argument(
-            "-n", "--number", dest="number", type = int, metavar="number",
+            "-n", "--number", dest="number", type = int,
             help="The number given to be guessed, if not given it will choose one at random within bounds"
         )
 
