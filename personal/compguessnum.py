@@ -1,26 +1,25 @@
 from random import shuffle, randint
 
 #I could've done some closure stuff so that each time you ran the thing for it to guess it would guess a different one
-#and then it handled all the printing and stuff on the outside but I'm not gonna be doing that right now
+#and then it handled all the printing and stuff on the outside but that seems too complex for something so simple
+#and it probably isn't best practice anyways
 
-def choose_rand_num(min, limit):
-    num = randint(min, limit)
-    return num
-
+#makes a sequence of every num in range, shuffles it, iterates through printing each time, and returns the given number when it finally reaches it
+#it does *not* print the given number, only returns it
 def comp_guess_num(min, limit, num):
     trials = 0
 
-    sequence = list(range(min, limit + 1)) #choosing the num is inclusive, so this has to be too, makes a list of every num in range
-    
-    shuffle(sequence) #shuffles up the sequence so its guesses are random
+    sequence = list(range(min, limit + 1))
+    shuffle(sequence)
 
-    for x in sequence: #returns the number when it finally gets to it
+    for x in sequence:
         if x == num:
             trials += 1
             return (num, trials)
         else:
-            print(f"It's not {x}")
             trials += 1
+            print(f"It's not {x}")
+
 
 if __name__ == "__main__":
     import argparse
@@ -35,24 +34,24 @@ if __name__ == "__main__":
         )
 
         parser.add_argument(
-            "-m", "--minimum", dest="minimum", required=True, type=int,
+            "-m", "--minimum", required=True, type=int,
             help="The minimum integer the computer will be guessing"
         )
 
         parser.add_argument(
-            "-l", "--limit", dest="limit", required=True, type=int,
+            "-l", "--limit", required=True, type=int,
             help="The maximum integer the computer will be guessing"
         )
 
         parser.add_argument(
-            "-n", "--number", dest="number", type = int,
+            "-n", "--number", type = int,
             help="The number given to be guessed, if not given it will choose one at random within bounds"
         )
 
         args = parser.parse_args()
 
         if args.number == None: #if no number was given it chooses one randomly
-            num = choose_rand_num(args.minimum, args.limit)
+            num = randint(args.minimum, args.limit)
         else:
             num = args.number
         
@@ -68,6 +67,6 @@ if __name__ == "__main__":
     result = parsing() #this will end up returning a tuple, (number it was guessing, # of trials)
 
     if result[0] not in (-666, -420, -69, -1, 0, 1, 42, 69, 100, 420, 666): #cheeky message for people who use common numbers, those ill-witted scallywags
-        print(f"The number is {result[0]:,}!\nThat took {result[1]:,} trials!")
+        print(f"The number was '{result[0]:,}'!\nThat took {result[1]:,} trials!")
     else:
-        print(f"The number is {result[0]:,}! (How original...)\nThat took {result[1]:,} Trials!")
+        print(f"The number was '{result[0]:,}'! (How original...)\nThat took {result[1]:,} Trials!")
