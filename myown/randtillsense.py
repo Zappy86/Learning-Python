@@ -22,12 +22,12 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(
-        prog='Random until it makes sense',
-        description='Shuffles the characters in a string until it outputs the original one',
-        epilog='Created by yours truly, the ridiculously handsome and infinitely benevolent Dominic')
+        prog='Randtillsense',
+        description='Shuffles the characters in a string until it outputs the original one.',
+        epilog='Created by yours truly, the ridiculously handsome and infinitely benevolent Dominic.')
 
     parser.add_argument(
-        "-i", "--input", dest="input", help="The string that halts the program when outputted", required=True, 
+        "input", help="The string that halts the program when outputted.", 
         type=str
     )
 

@@ -29,7 +29,7 @@ if __name__ == "__main__":
         
         parser = argparse.ArgumentParser(
             description="Given a minimum and maximum range, and possibly a number, tries to guess that number",
-            prog="Computer Guesses Number",
+            prog="Compguessnum",
             epilog="Made by, once again, yours truly, the ever omniscient and omnibenevolent Dominic"
         )
 
